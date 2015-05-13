@@ -31,7 +31,13 @@
 #include <bcmpcie.h>
 #include <hnd_cons.h>
 #ifdef MSM_PCIE_LINKDOWN_RECOVERY
+#if defined (CONFIG_ARCH_MSM)
+#if defined (CONFIG_ARM64)
+#include <linux/msm_pcie.h>
+#else
 #include <mach/msm_pcie.h>
+#endif
+#endif 
 #endif /* MSM_PCIE_LINKDOWN_RECOVERY */
 
 /* defines */
